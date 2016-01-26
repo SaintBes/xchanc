@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="xchanc:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="xchanc.war">
+      <element id="artifact" artifact-name="xchanc:war exploded" />
+    </root>
+  </artifact>
+</component>
