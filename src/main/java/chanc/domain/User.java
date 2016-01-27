@@ -6,17 +6,29 @@ import java.util.List;
 
 @Entity
 @Table(name = "USERS")
+
 public class User implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String username;
     private String password;
+    private String fName;
+    private String lName;
+
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "depId", nullable = false)
+    private Department department;
+
+
     @ManyToMany
     @JoinTable(name = "UsersAndRoles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
+
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
@@ -73,4 +85,27 @@ public class User implements Serializable {
         this.status = status;
     }
 
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }
