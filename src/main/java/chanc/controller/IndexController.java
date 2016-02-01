@@ -2,6 +2,7 @@ package chanc.controller;
 
 
 
+import chanc.domain.User;
 import org.apache.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,14 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.jsf.FacesContextUtils;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
+
 
 @Controller
 @SessionAttributes("user")
@@ -30,16 +36,12 @@ public class IndexController {
     public String index(HttpServletRequest request, Model model, HttpSession session) {
         model.addAttribute("md1", "opa-opa");
 
-//        log.info("/index controller");
-        return "login";
+
+        return "dashboard";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginPage() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null) {
-            return "dashboard";
-        }
+    @RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
+    public String doLogin() {
 
         return "login";
     }
@@ -53,15 +55,5 @@ public class IndexController {
         return "redirect:/login?logout";
     }
 
-//    private String getPrincipal(){
-//        String userName = null;
-//        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//
-//        if (principal instanceof UserDetails) {
-//            userName = ((UserDetails)principal).getUsername();
-//        } else {
-//            userName = principal.toString();
-//        }
-//        return userName;
-//    }
+
 }
