@@ -32,6 +32,9 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
+    private List<Document> documents;
+
     public User() {
     }
 
@@ -107,5 +110,13 @@ public class User implements Serializable {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public List<Document> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<Document> documents) {
+        this.documents = documents;
     }
 }

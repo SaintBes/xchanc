@@ -20,6 +20,12 @@ public class Department {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "department")
     private List<User> users;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "document")
+    private List<Document> documents;
+
+    public Department() {
+    }
+
     public int getDepId() {
         return depId;
     }
@@ -42,5 +48,13 @@ public class Department {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public List<Document> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<Document> documents) {
+        this.documents = documents;
     }
 }
