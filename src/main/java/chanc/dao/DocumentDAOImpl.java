@@ -24,7 +24,7 @@ public class DocumentDAOImpl implements DocumentDAO {
     }
 
     @Override
-    public Document readDociument(int docId) {
+    public Document readDocument(int docId) {
         return (Document) sessionFactory.getCurrentSession().get(Document.class, docId);
     }
 

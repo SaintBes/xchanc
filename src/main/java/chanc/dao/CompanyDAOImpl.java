@@ -23,7 +23,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public Company readDociument(int companyId) {
+    public Company readCompany(int companyId) {
         return (Company) sessionFactory.getCurrentSession().get(Company.class, companyId);
     }
 

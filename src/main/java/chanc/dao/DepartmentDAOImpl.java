@@ -23,7 +23,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
     }
 
     @Override
-    public Department readDociument(int departmentId) {
+    public Department readDepartment(int departmentId) {
         return (Department) sessionFactory.getCurrentSession().get(Department.class, departmentId);
     }
 

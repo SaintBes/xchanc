@@ -23,7 +23,7 @@ public class ImageDAOImpl implements ImageDAO {
     }
 
     @Override
-    public Image readDociument(int imageId) {
+    public Image readImage(int imageId) {
         return (Image) sessionFactory.getCurrentSession().get(Image.class, imageId);
     }
 

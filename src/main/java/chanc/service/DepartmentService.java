@@ -1,4 +1,4 @@
-package chanc.dao;
+package chanc.service;
 
 import chanc.domain.Department;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by admssa on 06.02.2016.
  */
-public interface DepartmentDAO {
+public interface DepartmentService {
 
     Department createDepartment(Department department);
     Department readDepartment(int departmentId);

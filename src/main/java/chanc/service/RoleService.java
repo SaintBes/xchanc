@@ -1,4 +1,4 @@
-package chanc.dao;
+package chanc.service;
 
 import chanc.domain.Role;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by admssa on 06.02.2016.
  */
-public interface RoleDAO {
+public interface RoleService {
 
     Role createRole(Role role);
     Role readRole(int roleId);

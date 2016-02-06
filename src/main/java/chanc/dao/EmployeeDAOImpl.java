@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee readDociument(int employeeId) {
+    public Employee readEmployee(int employeeId) {
         return (Employee) sessionFactory.getCurrentSession().get(Employee.class, employeeId);
     }
 

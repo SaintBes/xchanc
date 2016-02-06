@@ -23,7 +23,7 @@ public class RoleDAOImpl implements RoleDAO {
     }
 
     @Override
-    public Role readDociument(int roleId) {
+    public Role readRole(int roleId) {
         return (Role) sessionFactory.getCurrentSession().get(Role.class, roleId);
     }
 

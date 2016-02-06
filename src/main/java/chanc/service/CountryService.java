@@ -1,4 +1,6 @@
-package chanc.dao;
+package chanc.service;
+
+
 
 import chanc.domain.Country;
 
@@ -7,7 +9,7 @@ import java.util.List;
 /**
  * Created by admssa on 06.02.2016.
  */
-public interface CountryDAO {
+public interface CountryService {
 
     Country createCountry(Country country);
     Country readCountry(int countryId);

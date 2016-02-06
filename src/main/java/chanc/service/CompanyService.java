@@ -1,4 +1,4 @@
-package chanc.dao;
+package chanc.service;
 
 import chanc.domain.Company;
 
@@ -7,7 +7,8 @@ import java.util.List;
 /**
  * Created by admssa on 06.02.2016.
  */
-public interface CompanyDAO {
+public interface CompanyService {
+
     Company createCompany(Company company);
     Company readCompany(int companyId);
     void uppdateCompany(Company company);

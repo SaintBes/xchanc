@@ -23,7 +23,7 @@ public class CountryDAOImpl implements CountryDAO {
     }
 
     @Override
-    public Country readDociument(int countryId) {
+    public Country readCountry(int countryId) {
         return (Country) sessionFactory.getCurrentSession().get(Country.class, countryId);
     }
 

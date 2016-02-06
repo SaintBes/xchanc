@@ -23,7 +23,7 @@ public class CityDAOImpl implements CityDAO {
     }
 
     @Override
-    public City readDociument(int cityId) {
+    public City readCity(int cityId) {
         return (City) sessionFactory.getCurrentSession().get(City.class, cityId);
     }
 
