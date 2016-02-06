@@ -35,6 +35,14 @@ public class User implements Serializable {
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
     private List<Document> documents;
 
+    @Column(columnDefinition = "boolean default false")
+    private boolean depDirector;
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean director;
+
+
+
     public User() {
     }
 
@@ -118,5 +126,21 @@ public class User implements Serializable {
 
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
+    }
+
+    public boolean isDepDirector() {
+        return depDirector;
+    }
+
+    public void setDepDirector(boolean depDirector) {
+        this.depDirector = depDirector;
+    }
+
+    public boolean isDirector() {
+        return director;
+    }
+
+    public void setDirector(boolean director) {
+        this.director = director;
     }
 }
