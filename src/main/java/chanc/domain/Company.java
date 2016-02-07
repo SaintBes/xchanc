@@ -19,10 +19,10 @@ public class Company {
     @JoinColumn(name = "cityId", nullable = false)
     private City city;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
     private List<Employee> employeeList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "document")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
     private List<Document> documents;
 
     public Company() {

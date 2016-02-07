@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by admssa on 02.02.2016.
  */
+@Entity
 public class Employee {
 
     @Id
@@ -20,7 +21,7 @@ public class Employee {
     @JoinColumn(name = "companyId", nullable = false)
     private Company company;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "document")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
     private List<Document> documents;
 
     public Employee() {

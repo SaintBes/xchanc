@@ -49,8 +49,8 @@ public class Document {
 
     @ManyToMany
     @JoinTable(name="docs_users",
-            joinColumns = @JoinColumn(name="user_id", referencedColumnName="id"),
-            inverseJoinColumns = @JoinColumn(name="doc_id", referencedColumnName="docId"))
+            joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns = @JoinColumn(name="doc_id"))
             private List<User> users;
 
     @Enumerated(EnumType.STRING)

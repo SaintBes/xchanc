@@ -9,6 +9,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String roleName;
+
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
 

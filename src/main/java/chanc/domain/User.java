@@ -32,7 +32,7 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "users")
     private List<Document> documents;
 
     @Column(columnDefinition = "boolean default false")

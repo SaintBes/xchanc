@@ -18,6 +18,7 @@
 
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/**" location="/WEB-INF/"/>
+
     <mvc:annotation-driven/>
 
 

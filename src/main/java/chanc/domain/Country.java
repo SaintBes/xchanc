@@ -15,10 +15,10 @@ public class Country {
 
     private String countryName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "country")
     private List<City> cityList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "document")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "country")
     private List<Document> documents;
 
     public Country() {

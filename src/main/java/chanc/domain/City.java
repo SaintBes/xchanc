@@ -22,7 +22,7 @@ public class City {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")
     private List<Company> companyList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "document")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")
     private List<Document> documents;
 
     public City() {

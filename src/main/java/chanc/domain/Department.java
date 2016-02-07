@@ -20,7 +20,7 @@ public class Department {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "department")
     private List<User> users;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "document")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
     private List<Document> documents;
 
     public Department() {
