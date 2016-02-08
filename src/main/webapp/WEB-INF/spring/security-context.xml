@@ -13,7 +13,7 @@
 
 		<intercept-url pattern="/**" access="isAuthenticated()"/>
         <form-login login-page="/login" default-target-url="/login" authentication-failure-url="/login"/>
-        <logout logout-url="/logout" logout-success-url="/login"/> <!-- the logout url we will use in JSP -->
+        <logout logout-url="/logout" logout-success-url="/"/> <!-- the logout url we will use in JSP -->
       </http>
 
 	<beans:bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
